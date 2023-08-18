@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    //border: 1px solid red;
+    //box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: Archia,sans-serif;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    padding:0 5%
+    
+}
+
+.logo {
+    display: flex;
+    font-size: 40px;
+
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 25px;
+
+
+}
+
+.log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 25px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 15px
+
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    //margin-top: 30px;
+}
+
+.left {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    //margin-top: 10%;
+}
+
+.search {
+    display: flex;
+    width: 105%;
+    height: 100px;
+    box-shadow: 0 46px 50px 0 rgba(0,0,0,.1);
+    border-color: #fff;
+    border: 0px;
+    overflow: visible;
+    position: relative;
+    bottom:-10%;
+    z-index: 2;
+
+}
+
+input{
+    flex:3;
+    vertical-align: middle;
+    padding-left: 30px;
+    border-width: 0;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+        box-shadow: 7px 10px 50px 10px #0003;
+    }
+
+}
+
+button{
+    flex:1;
+    background-color: #97c680;
+    border-width: 0;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: #feba88;
+        }
+    
+
+}
+
+
+.slogan{
+    font-size: 100px;
+    font-weight: 500;
+    overflow: hidden;
+
+    > span {
+        display: block;
+        overflow: hidden;
+
+        &:nth-child(2) span{
+            animation-delay: 300ms;
+        }
+        &:nth-child(3) span{
+            animation-delay: 600ms;
+        }
+        > span {
+            display: block;
+            animation: fadeIn 1s ease forwards;
+            transform: translateY(100%);
+        }
+    }
+
+
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+    
+}
+
+
+
+.right {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    padding-right: 5%;
+    animation : width 1s ease forwards;
+}
+
+.image1 {
+    background-image: linear-gradient(0deg, rgb(26, 26, 26) 0%, rgba(0,0,0,0) 40%), url('./images/6183bce7320d030e82c15028_hero_person-1-p-500.webp');
+
+}
+
+.image2 {
+    background-image: linear-gradient(0deg, rgb(26, 26, 26) 0%, rgba(0,0,0,0) 40%), url('./images/6183bce3e584104be2e330e0_hero_person-2-p-500.webp');
+}
+
+.image3 {
+    background-image: linear-gradient(0deg, rgb(26, 26, 26) 0%, rgba(0,0,0,0) 40%), url('./images/6183bb01e5841050e8e31f3b_hero_person-3-p-500.webp');
+}
+
+.image1, .image2, .image3{
+    position: relative; //important pour que la position absolue de l'enfant soit reste dans la div
+    width: 33%;
+    height: 70%;
+    background-size: auto 100%;
+    background-position: center top;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: width 0.5s ease;
+
+    .vert {
+        position: absolute;
+        bottom:10%;
+        left: 0%;
+        transform: rotate(-90deg);
+        font-size: 30px;
+
+    }
+
+    .horizon{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        height: 100%;
+        font-size: 3px;
+    }
+    
+    
+}
+
+
+.right > div:hover {
+    width: 100%;
+
+    .topic{
+        opacity: 1;
+        font-size: 30px;
+
+    }
+
+    .vert{
+        opacity: 0;
+
+    }
+
+}
+
+
+
+.topic{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+

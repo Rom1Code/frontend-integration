@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    font-family: 'kanil', sans-serif;
+}
+
+svg {
+    color: white;
+    stroke: white
+}
+
+.menu-mobile { 
+    display: none;
+
+    position: absolute;
+    padding :10px;
+    z-index: 1;
+    height: 100%;
+    width:80%;
+    background-color: black;
+
+}
+
+.mobile-logo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.left ul{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    margin:0px;
+    padding: 0px
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 2s ease forwards;
+    height: 5rem;
+    animation-delay: 1.8s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-40%)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%)
+    }
+}
+
+
+ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding : 10px;
+    font-size: 20px;
+}
+
+.menu,
+.icon {
+    flex-direction: row;
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    line-height: 1.2;
+    padding: 50px 0px
+}
+
+h1 {
+    font-size: calc(7000vw / 1018);
+    line-height: 1;
+    /* overflow: hidden; */
+}
+
+.hero1{
+    display: inline-block;
+    animation: titleFadeIn 2s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+.hero2 {
+    display: inline-block;
+    color: black;
+    -webkit-text-stroke: calc(3vw / 10) white;
+    animation: titleFadeOut 2s ease forwards;
+    animation-delay: 1.8s;
+    opacity: 0;
+}
+
+@keyframes titleFadeIn {
+    0% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity:1
+    }
+}
+
+@keyframes titleFadeOut {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity:1
+    }
+}
+
+
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1rem;
+    flex-grow: 1;
+    height: 100vh;
+    
+
+}
+
+.img-container > div {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        inset:0;
+        height: 150%;
+        width: 101%;
+        /* clip-path: polygon(0% 0%, 100% 0%, 100% 69.25%, 49.75% 100%, 0% 78.5%); */
+        background-color: #000000;
+        /* border-bottom-left-radius: 30% 10%; */
+        animation: reveal 2.5s ease-in forwards ;
+        /* animation-delay: 300ms */
+    }
+
+    &:nth-child(1){
+        &:after{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 95.49%, 0% 90.99%);
+            animation-delay: 300ms;
+        }
+    }
+    &:nth-child(2){
+        &:after{
+            animation-delay: 0ms;
+        }
+    }
+    &:nth-child(3){
+        &:after{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90.99%, 50% 95.49%, 0% 100%);
+            animation-delay: 300ms;
+        }
+    }
+
+}
+
+@keyframes reveal {
+    from {
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+    
+}
+.image1,
+.image2,
+.image3 {
+    flex : 1;
+    opacity: 0.7;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    &:hover {
+        opacity: 1;
+        z-index: 1;
+       animation: hover 1s ease-in-out forwards;
+    }
+}
+
+@keyframes hover {
+    from {
+        background-size: 100% 100%;
+
+    }
+    to{
+        background-size: 110% 110%;
+
+    }
+    
+}
+
+.image1 {
+    background-image: url('./assets/assets-metropolis/1.jpeg');
+}
+.image2 {
+    background-image: url('./assets/assets-metropolis/2.jpeg');
+}
+.image3 {
+    background-image: url('./assets/assets-metropolis/3.jpeg');
+}
+
+/* img {
+    height: 100%;
+    width: 100%;
+    object-fit:cover ;
+} */
+.burger {
+    display: none;
+}
+/* Masquer le menu par défaut lorsque la largeur de l'écran est inférieure à 700px */
+@media (max-width: 700px) {
+    .burger {
+        display: block;
+    }
+    .menu {
+      display: none; /* Masquer la liste du menu */
+    }
+
+    .img-container{
+        display: grid;
+        grid-template-columns: repeat(1, 3fr);
+    
+    }
+    /* .image2, .image3 {
+        display: none;
+        
+    } */
+
+    .icon {
+      display: flex; /* Afficher l'icône du menu */
+    }
+  }
+
+

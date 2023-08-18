@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Archia, sans-serif;
+}
+
+nav {
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 5%;
+  display: flex;
+}
+
+.logo {
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+}
+
+.menu {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.menu ul {
+  flex-direction: row;
+  gap: 30px;
+  font-size: 25px;
+  display: flex;
+}
+
+.log {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.log ul {
+  flex-direction: row;
+  gap: 30px;
+  font-size: 25px;
+  display: flex;
+}
+
+.btn {
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.left {
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  padding-left: 5%;
+  display: flex;
+}
+
+.search {
+  z-index: 2;
+  border: 0;
+  width: 105%;
+  height: 100px;
+  display: flex;
+  position: relative;
+  bottom: -10%;
+  overflow: visible;
+  box-shadow: 0 46px 50px #0000001a;
+}
+
+input {
+  vertical-align: middle;
+  border-width: 0;
+  flex: 3;
+  padding-left: 30px;
+  font-size: 18px;
+  transition: box-shadow .3s;
+}
+
+input:hover {
+  box-shadow: 7px 10px 50px 10px #0003;
+}
+
+button {
+  background-color: #97c680;
+  border-width: 0;
+  flex: 1;
+  font-size: 30px;
+  transition: background-color .3s;
+}
+
+button:hover {
+  background-color: #feba88;
+}
+
+.slogan {
+  font-size: 100px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.slogan > span {
+  display: block;
+  overflow: hidden;
+}
+
+.slogan > span:nth-child(2) span {
+  animation-delay: .3s;
+}
+
+.slogan > span:nth-child(3) span {
+  animation-delay: .6s;
+}
+
+.slogan > span > span {
+  animation: 1s forwards fadeIn;
+  display: block;
+  transform: translateY(100%);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.right {
+  flex-direction: row;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-right: 5%;
+  animation: 1s forwards width;
+  display: flex;
+}
+
+.image1 {
+  background-image: linear-gradient(0deg, #1a1a1a 0%, #0000 40%), url("6183bce7320d030e82c15028_hero_person-1-p-500.9c77d2ca.webp");
+}
+
+.image2 {
+  background-image: linear-gradient(0deg, #1a1a1a 0%, #0000 40%), url("6183bce3e584104be2e330e0_hero_person-2-p-500.1c8261b2.webp");
+}
+
+.image3 {
+  background-image: linear-gradient(0deg, #1a1a1a 0%, #0000 40%), url("6183bb01e5841050e8e31f3b_hero_person-3-p-500.27363b1a.webp");
+}
+
+.image1, .image2, .image3 {
+  color: #fff;
+  cursor: pointer;
+  background-position: top;
+  background-size: auto 100%;
+  border-radius: 20px;
+  width: 33%;
+  height: 70%;
+  padding: 10px;
+  font-weight: bold;
+  transition: width .5s;
+  position: relative;
+}
+
+.image1 .vert, .image2 .vert, .image3 .vert {
+  font-size: 30px;
+  position: absolute;
+  bottom: 10%;
+  left: 0%;
+  transform: rotate(-90deg);
+}
+
+.image1 .horizon, .image2 .horizon, .image3 .horizon {
+  justify-content: space-between;
+  align-items: end;
+  height: 100%;
+  font-size: 3px;
+  display: flex;
+}
+
+.right > div:hover {
+  width: 100%;
+}
+
+.right > div:hover .topic {
+  opacity: 1;
+  font-size: 30px;
+}
+
+.right > div:hover .vert {
+  opacity: 0;
+}
+
+.topic {
+  opacity: 0;
+  flex-direction: column;
+  margin: 20px;
+  transition: opacity .2s;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.b2d9cf43.css.map */

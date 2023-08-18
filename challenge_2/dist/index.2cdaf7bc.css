@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  display: flex;
+}
+
+.logo {
+  justify-content: center;
+  align-items: center;
+  margin-left: 8%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.menu {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.menu ul {
+  flex-direction: row;
+  gap: 30px;
+  font-size: 20px;
+  display: flex;
+}
+
+.log {
+  justify-content: center;
+  align-items: center;
+  margin-right: 70px;
+  display: flex;
+}
+
+.log ul {
+  flex-direction: row;
+  gap: 30px;
+  font-size: 20px;
+  display: flex;
+}
+
+.btn {
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  display: flex;
+}
+
+.left {
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10%;
+  font-size: 100px;
+  display: flex;
+}
+
+.right {
+  flex-direction: row;
+  flex: 2;
+  gap: 30px;
+  margin-right: 70px;
+  animation: 1s forwards width;
+  display: flex;
+}
+
+.image1 {
+  background-image: url("6183bce7320d030e82c15028_hero_person-1-p-500.9c77d2ca.webp");
+}
+
+.image2 {
+  background-image: url("6183bce3e584104be2e330e0_hero_person-2-p-500.1c8261b2.webp");
+}
+
+.image3 {
+  background-image: url("6183bb01e5841050e8e31f3b_hero_person-3-p-500.27363b1a.webp");
+}
+
+.right > div {
+  cursor: pointer;
+  background-position: top;
+  background-size: auto 100%;
+  border-radius: 20px;
+  align-items: flex-end;
+  width: 33%;
+  height: 60%;
+  padding: 10px;
+  transition: width 1s;
+  display: flex;
+}
+
+.right > div:hover {
+  width: 100%;
+}
+
+.vert {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  bottom: 100px;
+  left: -75px;
+  transform: rotate(-90deg);
+}
+
+.horizon {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

@@ -1,0 +1,50 @@
+<html>
+    <header>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="./style.css"></link>
+
+    </header>
+    <body>
+        <div class="container" id="container">
+            <div class="transition" id="transition"></div>
+            <div class="transition2" id="transition2"></div>
+
+                 <div class="btn-top" id="btn-top">
+                    <span class="text" id="text">click</span>
+                </div>
+                <div class="btn-bottom" id="btn-bottom">
+                    <span class="text" id="text">click</span>
+                </div>
+
+        </div>
+        <script>
+            var container = document.getElementById("container")
+            var btntop = document.getElementById("btn-top")
+            var btnbottom = document.getElementById("btn-bottom")
+
+            var transition = document.getElementById("transition")
+            var transition2 = document.getElementById("transition2")
+
+            btntop.addEventListener("click", (e) => {
+                transition.classList.add("anim-top")
+                //container.classList.add("transition")
+            })
+
+            btnbottom.addEventListener("click", (e) => {
+                transition2.classList.add("anim-bottom")
+                //container.classList.add("transition")
+            })
+
+
+            addEventListener("animationend", (event) => {
+                transition.classList.remove("anim-top")
+                transition2.classList.remove("anim-bottom")
+
+            });
+
+
+       </script>
+    </body>
+</html>

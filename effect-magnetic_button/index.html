@@ -1,0 +1,95 @@
+<html>
+    <header>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="./style.css"></link>
+
+    </header>
+    <body>
+        <div class="circle" id="circle"></div> 
+
+        <div class="container" id="container">
+            <h4>move the mouse</h4>
+            <div class="btn_container" id="btn_container" >
+                 <div class="btn" id="btn">
+                    <div class="remplissage"></div>
+                    <span class="text" id="text">About me</span>
+
+                </div>
+
+            </div>
+        </div>
+        <script>
+            var container = document.getElementById("container")
+            var btn_container = document.getElementById("btn_container")
+            var text = document.getElementById("text")
+
+            var circle = document.getElementById("circle")
+            var btn = document.getElementById("btn")
+
+            var circleX = 0;
+            var circleY = 0;
+            var mouseX = 0;
+            var mouseY = 0;
+            var strength = 30;
+            var strength_text = 10;
+            var btn_container_initalX = btn_container.offsetLeft
+            var btn_container_initalY = btn_container.offsetTop
+
+            var bounding = btn_container.getBoundingClientRect()
+            // btn_container.style.transition = "transform 0.1s ease"
+            // text.style.transition = "transform 0.1s ease"
+
+            container.addEventListener("mousemove", (e) => {
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            });
+
+
+            btn_container.addEventListener("mouseenter", (e) => {
+                circle.style.opacity=0
+
+            })
+
+            btn_container.addEventListener("mouseleave", (e) => {
+
+                
+                btn_container.style.transform = "none";
+                circle.style.opacity=1
+
+            })
+
+
+            btn_container.addEventListener("mousemove", (e) => {
+
+            var x = ((( e.clientX - bounding.left)/btn_container.offsetWidth) - 0.5) * strength;
+            var y = ((( e.clientY - bounding.top)/btn_container.offsetHeight) - 0.5) * strength;
+            btn_container.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+            var x = ((( e.clientX - bounding.left)/btn_container.offsetWidth) - 0.5) * strength_text;
+            var y = ((( e.clientY - bounding.top)/btn_container.offsetHeight) - 0.5) * strength_text;
+            text.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+            })
+
+
+        function lerp (start, end, amt){
+            return (1-amt)*start+amt*end
+        } 
+
+        setInterval (move,1000/60)
+
+        function move(){
+            circleX = lerp (circleX, mouseX, 0.2);
+            circleY = lerp (circleY, mouseY, 0.2);
+            circle.style.transform = `translate3d(${circleX}px, ${circleY}px, 0)`;
+        }
+
+
+
+       </script>
+    </body>
+</html>

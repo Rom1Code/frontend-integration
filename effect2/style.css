@@ -1,0 +1,19 @@
+
+body {
+  max-width: 1280px;
+  margin: auto;
+  font-family: "karla";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.circle {
+  border-radius: 50%;
+  border-width: 1px solid black;
+  background-color: aqua;
+  width: 50px;
+}
+
